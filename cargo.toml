@@ -1,0 +1,11 @@
+[package]
+name = "libtokenizers"
+version = "0.1.0"
+authors = ["Marco Zocca"]
+edition = "2021"
+
+[lib]
+crate-type = ["lib"]
+
+[dependencies]
+tokenizers = { default-features = false, features = ["unstable_wasm"], git = "https://github.com/huggingface/tokenizers" }

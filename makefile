@@ -1,14 +1,17 @@
+# # from https://github.com/aisamanra/rust-haskell-ffi/blob/master/Makefile
+
 RC = LD_LIBRARY_PATH=/usr/local/lib rustc
 #GHC = ghc
-STACK = stack
+# STACK = stack build
 
 all: main
 
-libffi.a: ffi.rs
+libtokenizers.a: ffi.rs
 	$(RC) --crate-type staticlib ffi.rs
 
-main: libffi.a
-	$(STACK)
+main: libtokenizers.a
+	stack build
+
 
 # libfact.a: fact.rs
 # 	$(RC) --crate-type staticlib fact.rs
