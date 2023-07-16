@@ -6,6 +6,7 @@ edition = "2021"
 
 [lib]
 crate-type = ["lib"]
+path = "ffi.rs"
 
 [dependencies]
-tokenizers = { default-features = false, features = ["unstable_wasm"], git = "https://github.com/huggingface/tokenizers" }
+tokenizers = { git = "https://github.com/huggingface/tokenizers" }
