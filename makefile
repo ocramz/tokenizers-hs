@@ -1,7 +1,14 @@
 RC = LD_LIBRARY_PATH=/usr/local/lib rustc
-GHC = ghc
+#GHC = ghc
+STACK = stack
 
 all: main
+
+libffi.a: ffi.rs
+	$(RC) --crate-type staticlib ffi.rs
+
+main: libffi.a
+	$(STACK)
 
 # libfact.a: fact.rs
 # 	$(RC) --crate-type staticlib fact.rs
